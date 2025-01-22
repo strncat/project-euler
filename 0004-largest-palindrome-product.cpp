@@ -1,17 +1,12 @@
-// Project Euler #4: Largest palindrome product
-// Constraints
-// 1 ≤ T < 100
-// 101101 < N < 1000000
-// Sample Input
-// 2
-// 101110
-// 800000
-// Sample Output
-// 101101
-// 793397
-//
-
+#include <iostream>
+#include <math.h>
+#include <algorithm>
 #include <stdio.h>
+#include <unordered_map>
+#include <functional>
+#include <utility>
+#include <set>
+#include <numeric>
 
 #define N 10000
 
@@ -39,20 +34,15 @@ int largestPalindrome(int n) {
     return largestPalindrome;
 }
 
-void testCases() {
-    int largest = largestPalindrome(800000);
-    largestPalindrome(101110) == 101101 ?  printf("success\n") : printf("failed %d is incorrect\n", largest);
-    largest = largestPalindrome(800000);
-    largestPalindrome(800000) == 793397 ?  printf("success\n") : printf("failed %d is incorrect\n", largest);
-}
+int main(int argc, const char * argv[]) {
+    clock_t begin, end;
+    double time_spent;
+    begin = clock();
 
-int main() {
-    int cases, n;
-    testCases();
-    scanf("%d", &cases);
-    while (cases--) {
-        scanf("%d", &n);
-        printf("%d\n", largestPalindrome(n));
-    }
+    printf("%d\n", largestPalindrome(999999));
+
+    end = clock();
+    time_spent = (double)(end - begin) / CLOCKS_PER_SEC;
+    printf("time spent = %f\n", time_spent);
     return 0;
 }
