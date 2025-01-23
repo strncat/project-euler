@@ -36,6 +36,7 @@ unsigned long long max_prime_factorization(unsigned long long n) {
             //printf("prime factor = %llu\n", i);
         }
     }
+    // n itself is a prime factor
     if (n > 2 && n > max) {
         max = n;
     }
